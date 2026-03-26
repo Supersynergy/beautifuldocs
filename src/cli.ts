@@ -8,6 +8,7 @@ import { generateHtml } from './lib/template.js';
 import { generatePdf, generateHtmlPreview } from './lib/pdf.js';
 import { startWatchMode } from './lib/watcher.js';
 import { glob } from 'glob';
+import { generateContent, generateImage, generateStylePalette } from './lib/ai.js';
 import type { PDFOptions } from './lib/types.js';
 
 const program = new Command();
@@ -201,6 +202,71 @@ program
       console.log(`Batch complete! Processed ${files.length} files.`);
     } catch (error) {
       console.error('❌ Error:', error);
+      process.exit(1);
+    }
+  });
+
+program
+  .command('generate')
+  .description('Generate document from topic using AI')
+  .argument('<topic>', 'Topic to generate content about')
+  .option('-f, --format <format>', 'Format: article, slides, report', 'article')
+  .option('-t, --template <name>', 'Template to use', 'editorial')
+  .option('-o, --output <path>', 'Output file path')
+  .option('--image', 'Generate hero image with fal.ai')
+  .action(async (topic: string, options) => {
+    try {
+      console.log(`🤖 Generating ${options.format} about: ${topic}`);
+      
+      // Generate content
+      const { title, content } = await generateContent(topic, options.format as 'article' | 'slides' | 'report');
+      console.log(`✅ Content generated: ${title}`);
+      
+      // Generate image if requested
+      let imageUrl: string | undefined;
+      if (options.image) {
+        console.log(`🎨 Generating hero image...`);
+        imageUrl = await generateImage(`${topic}, professional presentation, modern design, clean aesthetic`);
+        console.log(`✅ Image generated`);
+      }
+      
+      // Build markdown with frontmatter
+      const frontmatter = [
+        '---',
+        `title: ${title}`,
+        `template: ${options.template}`,
+        `format: ${options.format === 'slides' ? '16:9' : 'a4'}`,
+        imageUrl ? `hero_image: ${imageUrl}` : '',
+        '---',
+        '',
+      ].filter(Boolean).join('\n');
+      
+      const markdown = frontmatter + content;
+      
+      // Save markdown
+      const outputMd = options.output || `${topic.toLowerCase().replace(/\s+/g, '-')}.md`;
+      const { writeFileSync } = require('fs');
+      writeFileSync(outputMd, markdown);
+      console.log(`✅ Markdown saved: ${outputMd}`);
+      
+      // Auto-build PDF
+      const outputPdf = outputMd.replace('.md', '.pdf');
+      const doc = parseMarkdown(markdown);
+      const html = generateHtml(doc, {
+        format: options.format === 'slides' ? '16:9' : 'a4',
+        template: options.template,
+      });
+      
+      await generatePdf(html, {
+        format: options.format === 'slides' ? '16:9' : 'a4',
+        outputPath: outputPdf,
+        printBackground: true,
+      });
+      
+      console.log(`✅ PDF generated: ${outputPdf}`);
+      
+    } catch (error) {
+      console.error('❌ Error:', error instanceof Error ? error.message : error);
       process.exit(1);
     }
   });

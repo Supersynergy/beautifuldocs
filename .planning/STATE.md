@@ -5,7 +5,7 @@
 See: .planning/PROJECT.md (updated 2026-03-25)
 
 **Core value:** Any content → stunning document in seconds, locally, with infinite style flexibility
-**Current focus:** Phase 3 — DX & Polish
+**Current focus:** Phase 4 — AI Integration
 
 ## Milestone: v1.0
 
@@ -13,7 +13,7 @@ See: .planning/PROJECT.md (updated 2026-03-25)
 |-------|------|--------|
 | 1 | Core Engine | ✅ Complete |
 | 2 | Visual System & Templates | ✅ Complete |
-| 3 | DX & Polish | Not Started |
+| 3 | DX & Polish | ✅ Complete |
 | 4 | AI Integration | Not Started |
 | 5 | Skill & Distribution | Not Started |
 
