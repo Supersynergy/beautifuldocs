@@ -1,0 +1,31 @@
+name: beautifuldocs
+description: Create beautiful PDFs, slides, and documents from Markdown or topics
+
+commands:
+  - name: build
+    description: Build PDF from markdown file
+    usage: /beautifuldocs build <file.md> [--template editorial|dark|minimal|neon] [--format a4|16:9]
+    
+  - name: generate
+    description: Generate document from topic using AI
+    usage: /beautifuldocs generate <topic> [--format article|slides|report] [--template template]
+    
+  - name: watch
+    description: Watch file for live preview
+    usage: /beautifuldocs watch <file.md>
+
+templates:
+  - editorial: Warm, magazine-style with serif headings
+  - dark: Dark theme with gradient accents, pitch-deck style
+  - minimal: Swiss design, clean and precise
+  - neon: Modern gradients, purple/cyan glow effects
+
+formats:
+  - a4: Standard document format
+  - 16:9: Presentation slide format
+  - letter: US letter size
+
+examples:
+  - /beautifuldocs build proposal.md --template dark
+  - /beautifuldocs generate "AI Trends 2026" --format slides --template neon
+  - /beautifuldocs watch report.md --port 3456
