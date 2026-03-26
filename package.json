@@ -1,0 +1,31 @@
+{
+  "name": "beautifuldocs",
+  "version": "0.1.0",
+  "description": "Beautiful PDFs, slides & documents from Markdown. CLI-first, AI-powered, stunning design.",
+  "type": "module",
+  "bin": {
+    "beautifuldocs": "./src/cli.ts"
+  },
+  "scripts": {
+    "dev": "bun run src/cli.ts",
+    "build": "bun build src/cli.ts --compile --outfile=beautifuldocs",
+    "test": "bun test"
+  },
+  "keywords": [
+    "pdf",
+    "markdown",
+    "slides",
+    "presentation",
+    "document-generator",
+    "cli",
+    "beautiful",
+    "design",
+    "templates"
+  ],
+  "author": "SuperSynergy",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/supersynergyapp/beautifuldocs"
+  }
+}
