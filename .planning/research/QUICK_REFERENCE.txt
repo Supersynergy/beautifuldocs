@@ -1,0 +1,214 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║         CSS EFFECTS & VISUAL PRIMITIVES — QUICK REFERENCE 2026            ║
+║                  For Beautiful Document Generation                         ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ EFFECT LIBRARY RANKINGS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+GLASSMORPHISM
+  1. CSS backdrop-filter (pure CSS, 0 bytes) ⭐ BEST
+  2. Glass UI library (github.com/themesberg/glass-ui)
+  3. liquidGL (5KB, WebGL + CSS fallback)
+  → Best for: Document overlays, modals, cards
+
+GRADIENTS
+  1. Native CSS (linear, radial) ⭐ BEST for simple gradients
+  2. MSHR (mshr.app) ⭐ BEST for mesh gradients — 500+ presets
+  3. MagicPattern (magicpattern.design/tools/mesh-gradients)
+  4. Colorffy (colorffy.com/mesh-gradient-generator)
+  → Best for: Backgrounds, overlays, visual depth
+
+AURORA EFFECT
+  1. Pure CSS @keyframes animation ⭐ BEST (0 bytes)
+  2. Aceternity UI (ui.aceternity.com/components/aurora-background)
+  3. Auroral library (github.com/LunarLogic/auroral)
+  → Best for: Hero sections, landing pages
+
+NOISE & GRAIN
+  1. SVG feTurbulence filter (inline, <1KB) ⭐ BEST
+  2. grained.js (5KB, animated grain)
+  3. CSSmatic noise generator (tool)
+  → Best for: Texture overlay, banding fix, visual realism
+
+SVG PATTERNS
+  1. Hero Patterns (heropatterns.com) ⭐ BEST — 90+ patterns
+  2. fffuel (fffuel.co) — Swiss Army knife for SVG
+  3. Pattern Monster (pattern.monster)
+  → Best for: Backgrounds, fills, wallpapers
+
+ICONS
+  1. Lucide (lucide.dev) ⭐ BEST — 1,668 icons, 29.4M weekly DL
+  2. Phosphor (phosphoricons.com) — 1,200 icons, 6 weights each
+  3. Heroicons (heroicons.com) — 290 icons, minimal design
+  → Best for: UI elements, visual hierarchy
+
+BLOBS & ORGANIC SHAPES
+  1. Blobmaker (blobmaker.app) ⭐ BEST — instant, <500B per blob
+  2. Haikei (haikei.app) — most versatile (waves, peaks, grids)
+  3. ssshape (fffuel.co/ssshape) — fine-tuned control
+  → Best for: Backgrounds, decorative elements, visual interest
+
+PAGE TRANSITIONS
+  1. View Transition API (native) ⭐ BEST (0 bytes, no library)
+  2. Browser support: Chrome/Edge/Safari 2026 ✅, Firefox pending
+  → Best for: SPA navigation, document page changes
+
+NEUMORPHISM
+  1. Pure CSS shadows ⭐ BEST (0 bytes)
+  2. neumorphism.io (generator for shadow values)
+  3. Soft-UI Library (npm package for components)
+  → Best for: Soft, tactile UI, minimal design
+
+AI TEXTURES & BACKGROUNDS
+  1. fal.ai FLUX Dev ($0.01-0.02/image) ⭐ BEST VALUE
+  2. fal.ai FLUX Pro ($0.03-0.05/image) — highest quality
+  3. fal.ai FLUX Kontext (image-to-image editing)
+  → Best for: Premium photorealistic backgrounds
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ BUNDLE SIZE IMPACT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PURE CSS (0 bytes added)
+  ✅ Glassmorphism (backdrop-filter)
+  ✅ Linear/radial gradients
+  ✅ Aurora animations (@keyframes)
+  ✅ Box shadows & neumorphism
+  ✅ View Transition API
+  ✅ CSS filters & transforms
+
+GENERATORS + COPY/PASTE (0 bytes code, SVG output <1KB typical)
+  ✅ Mesh gradients (MSHR, MagicPattern)
+  ✅ SVG noise (feTurbulence)
+  ✅ Background patterns (Hero Patterns)
+  ✅ Blob shapes (Blobmaker)
+  ✅ Page transitions (View Transition API)
+
+LIGHTWEIGHT LIBRARIES (<10KB)
+  ⚠ grained.js (5KB) — animated grain/noise
+  ⚠ liquidGL (5KB) — WebGL glassmorphism
+  ⚠ Auroral (5KB) — aurora animation presets
+
+NPM PACKAGES (install as needed)
+  📦 Lucide icons (~5-10KB, tree-shakeable)
+  📦 Phosphor icons (~5-10KB, tree-shakeable)
+  📦 Heroicons (~5-10KB, tree-shakeable)
+  📦 Glass UI components (varies)
+
+EXTERNAL COSTS (not included in bundle)
+  💾 fal.ai FLUX images (~300-500KB per image, JPG compressed)
+  ☁️ API calls ($0.01-0.05 per image generated)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ IMPLEMENTATION STRATEGY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FOR MINIMAL, ZERO-DEPENDENCY DOCUMENTS:
+  → Use pure CSS (glassmorphism, gradients, animations)
+  → Add SVG patterns (Hero Patterns, fffuel) via copy/paste
+  → Embed SVG blobs (Blobmaker) directly in HTML
+  → Total overhead: ~2-5KB CSS
+  → Load time: Near-instant ⚡
+
+FOR PROFESSIONAL DOCUMENTS WITH ICONS:
+  → Add Lucide icon library (npm install lucide-react)
+  → Combine with pure CSS effects
+  → Total size: ~10-15KB (CSS + icons)
+  → Browser compatibility: 95%+ (all modern browsers)
+
+FOR PREMIUM BACKGROUNDS:
+  → Pre-generate 3-5 hero backgrounds with fal.ai FLUX
+  → Cost: ~$0.10-0.25 total for texture library
+  → Store as WebP/JPG, serve via CDN
+  → Compress with TinyPNG/ImageOptim (40-50% reduction)
+  → Total per image: ~150-250KB (highly optimized)
+
+FOR DYNAMIC/CUSTOMIZABLE EFFECTS:
+  → Use generators (MSHR, Blobmaker) to create templates
+  → Export CSS/SVG
+  → Store in database or template library
+  → Embed on demand
+  → Zero additional dependencies
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ BROWSER SUPPORT (March 2026)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Feature                  Chrome  Edge    Safari  Firefox   Coverage
+────────────────────────────────────────────────────────────────────
+backdrop-filter           ✅      ✅      ✅       ✅      99%+
+CSS Gradients             ✅      ✅      ✅       ✅      99%+
+SVG Filters               ✅      ✅      ✅       ✅      99%+
+View Transition API       115+    115+    26+      ❌      ~90%
+@keyframes animations     ✅      ✅      ✅       ✅      99%+
+CSS clip-path             ✅      ✅      ✅       ✅      95%+
+WebGL (liquidGL)          ✅      ✅      ✅       ✅      95%+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ RECOMMENDED COMBINATION FOR BEST RESULTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+BACKGROUND LAYER:
+  1. MSHR mesh gradient (copy/paste CSS)
+  2. SVG noise overlay (feTurbulence, inline)
+  3. CSS blur effect (0 bytes)
+  4. Result: Complex, beautiful, professional
+  5. Bundle size added: <2KB
+
+CONTENT LAYER:
+  1. Glassmorphism card (pure CSS backdrop-filter)
+  2. Lucide icons (5-10KB, tree-shakeable)
+  3. Neumorphism shadows (pure CSS)
+  4. Result: Modern, tactile, professional
+  5. Bundle size added: 5-10KB
+
+INTERACTIVE LAYER:
+  1. View Transition API for navigation (0 bytes)
+  2. CSS animations for micro-interactions (0 bytes)
+  3. Result: Smooth, polished user experience
+  4. Bundle size added: 0 bytes
+
+PREMIUM HERO SECTION (Optional):
+  1. fal.ai FLUX texture background ($0.02/image)
+  2. Glassmorphism text overlay
+  3. Result: Stunning, memorable first impression
+  4. Cost: ~$0.02-0.05 per hero per variation
+
+TOTAL BUNDLE: ~5-15KB CSS + Lucide icons
+TOTAL LOAD TIME: <1 second
+TOTAL COST: $0 software + optional $0.02-0.05 per premium hero image
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ GITHUB URLS (Copy/Paste Ready)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+https://github.com/themesberg/glass-ui
+https://github.com/naughtyduk/liquidGL
+https://github.com/itsjavi/glasscn-ui
+https://github.com/lucide-icons/lucide
+https://github.com/phosphor-icons/core
+https://github.com/tailwindlabs/heroicons
+https://github.com/LunarLogic/auroral
+https://github.com/katendeglory/soft-ui-library
+https://github.com/jqueryscript/awesome-neumorphism
+https://github.com/WICG/view-transitions
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ GENERATOR URLS (All Free)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Mesh Gradients:     https://www.mshr.app/
+Aurora Gradients:   https://meshgradient.com/
+Patterns:           https://heropatterns.com/
+Blobs:              https://www.blobmaker.app
+Shapes:             https://haikei.app/
+SVG Tools:          https://www.fffuel.co/
+Neumorphism:        https://neumorphism.io/
+Noise:              https://www.cssmatic.com/noise-texture
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Full Research Document: EFFECTS.md (859 lines, 27KB)
+Last Updated: March 25, 2026
