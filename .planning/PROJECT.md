@@ -33,7 +33,15 @@ A CLI tool + Claude Code skill that transforms Markdown/HTML into gorgeous PDFs,
 - [ ] Typography system — font pairing presets (Serif+Sans, all-Sans, Mono-accent)
 - [ ] Color palette system — 20+ curated palettes + custom palette builder
 - [ ] Component library: cards, tags, progress bars, funnel diagrams, quote blocks, metric displays
-- [ ] Animation support for HTML output (CSS animations, transitions for browser viewing)
+- [ ] Animation support for HTML output (CSS animations, transitions, page transitions for browser viewing)
+- [ ] fal.ai integration — AI-generated hero images, backgrounds, textures, illustrations per page/section
+- [ ] OpenRouter connection — use best available model (Qwen, Claude, etc.) for content generation + style prompts
+- [ ] Effect libraries: glassmorphism, neumorphism, aurora gradients, mesh gradients, noise textures, grain overlays
+- [ ] Icon libraries: Lucide, Phosphor, or embedded SVG sprite — 1000+ icons available in templates
+- [ ] Page transitions: slide, fade, morph effects for HTML output (CSS + View Transitions API)
+- [ ] Gradient toolkit: linear, radial, conic, mesh gradients with 50+ prebuilt combos
+- [ ] Decorative elements: orbs, blobs, geometric shapes, dividers, accent lines as composable CSS classes
+- [ ] Background patterns: dots, grids, waves, topography, circuit — subtle texture options
 - [ ] Plugin architecture for extending templates and components
 - [ ] Batch processing — convert multiple documents at once
 - [ ] Watch mode — auto-rebuild on file changes (live preview in browser)
