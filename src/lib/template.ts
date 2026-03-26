@@ -1,7 +1,9 @@
 import type { ParsedDocument, Frontmatter } from './types.js';
 import { baseStyles, getPageFormatCss } from './css.js';
-import { getTemplate, getPalette, generateCssVariables } from './templates.js';
+import { getTemplate } from './templates.js';
+import { getPalette, generateCssVariables } from './palettes.js';
 import { getEffectStyles } from './effects.js';
+import { getIconStyles } from './icons.js';
 import { getComponentStyles } from './components.js';
 
 export interface TemplateOptions {
@@ -27,6 +29,7 @@ export function generateHtml(
   const templateCss = template.css(palette);
   const effectCss = getEffectStyles();
   const componentCss = getComponentStyles();
+  const iconCss = getIconStyles();
   
   // Add Google Fonts link for the template
   const fontLink = getFontLink(templateName);
@@ -44,6 +47,7 @@ export function generateHtml(
     ${templateCss}
     ${effectCss}
     ${componentCss}
+    ${iconCss}
     
     /* Template-specific CSS variables */
     :root {
@@ -118,4 +122,5 @@ function escapeHtml(text: string): string {
 }
 
 // Re-export for convenience
-export { getTemplate, getPalette, templates, palettes };
+export { getTemplate, templates } from './templates.js';
+export { getPalette, palettes } from './palettes.js';

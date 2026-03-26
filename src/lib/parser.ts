@@ -1,6 +1,7 @@
 import matter from 'gray-matter';
 import { marked } from 'marked';
 import { gfmHeadingId } from 'marked-gfm-heading-id';
+import { processIcons } from './icons.js';
 import type { ParsedDocument, Frontmatter } from './types.js';
 
 // Configure marked with GitHub Flavored Markdown extensions
@@ -18,7 +19,10 @@ export function parseMarkdown(content: string): ParsedDocument {
   const { data, content: markdownContent } = matter(content);
   
   // Convert markdown to HTML
-  const html = marked.parse(markdownContent, { async: false }) as string;
+  let html = marked.parse(markdownContent, { async: false }) as string;
+  
+  // Process icons :icon-name:
+  html = processIcons(html);
   
   // Extract title from frontmatter or first h1
   let title = (data as Frontmatter).title || '';
