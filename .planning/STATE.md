@@ -5,14 +5,14 @@
 See: .planning/PROJECT.md (updated 2026-03-25)
 
 **Core value:** Any content → stunning document in seconds, locally, with infinite style flexibility
-**Current focus:** Phase 2 — Visual System & Templates
+**Current focus:** Phase 3 — DX & Polish
 
 ## Milestone: v1.0
 
 | Phase | Name | Status |
 |-------|------|--------|
 | 1 | Core Engine | ✅ Complete |
-| 2 | Visual System & Templates | Not Started |
+| 2 | Visual System & Templates | ✅ Complete |
 | 3 | DX & Polish | Not Started |
 | 4 | AI Integration | Not Started |
 | 5 | Skill & Distribution | Not Started |

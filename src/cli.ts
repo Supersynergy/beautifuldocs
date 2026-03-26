@@ -6,6 +6,8 @@ import { resolve, dirname, basename, extname } from 'path';
 import { parseMarkdown } from './lib/parser.js';
 import { generateHtml } from './lib/template.js';
 import { generatePdf, generateHtmlPreview } from './lib/pdf.js';
+import { startWatchMode } from './lib/watcher.js';
+import { glob } from 'glob';
 import type { PDFOptions } from './lib/types.js';
 
 const program = new Command();
@@ -138,6 +140,69 @@ beautifuldocs build document.md
     console.log('\nNext steps:');
     console.log(`  cd ${dir === '.' ? '.' : dir}`);
     console.log('  beautifuldocs build document.md');
+  });
+
+program
+  .command('watch')
+  .description('Watch file for changes and serve live preview')
+  .argument('<file>', 'Markdown file to watch')
+  .option('-f, --format <format>', 'Output format', 'a4')
+  .option('-t, --template <name>', 'Template to use', 'editorial')
+  .option('-p, --port <number>', 'Port for preview server', '3456')
+  .action(async (file: string, options) => {
+    await startWatchMode(file, {
+      format: options.format,
+      template: options.template,
+      port: parseInt(options.port),
+    });
+  });
+
+program
+  .command('batch')
+  .description('Build multiple PDFs from glob pattern')
+  .argument('<pattern>', 'Glob pattern for markdown files (e.g., "docs/*.md")')
+  .option('-o, --output <dir>', 'Output directory', './output')
+  .option('-f, --format <format>', 'Output format', 'a4')
+  .option('-t, --template <name>', 'Template to use', 'editorial')
+  .action(async (pattern: string, options) => {
+    try {
+      const files = await glob(pattern);
+      
+      if (files.length === 0) {
+        console.log(`No files found matching: ${pattern}`);
+        return;
+      }
+      
+      console.log(`Found ${files.length} files to process...\n`);
+      
+      for (const file of files) {
+        console.log(`Processing: ${file}`);
+        const content = readFileSync(file, 'utf-8');
+        const doc = parseMarkdown(content);
+        const format = (doc.frontmatter.format || options.format) as 'a4' | '16:9';
+        const template = (doc.frontmatter.template || options.template) as string;
+        
+        const outputPath = resolve(options.output, `${basename(file, extname(file))}.pdf`);
+        
+        if (!existsSync(options.output)) {
+          mkdirSync(options.output, { recursive: true });
+        }
+        
+        const html = generateHtml(doc, { format, template });
+        await generatePdf(html, {
+          format,
+          outputPath,
+          printBackground: true,
+        });
+        
+        console.log(`  ✅ ${outputPath}\n`);
+      }
+      
+      console.log(`Batch complete! Processed ${files.length} files.`);
+    } catch (error) {
+      console.error('❌ Error:', error);
+      process.exit(1);
+    }
   });
 
 program.parse();
