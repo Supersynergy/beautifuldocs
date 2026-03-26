@@ -2,6 +2,8 @@ import matter from 'gray-matter';
 import { marked } from 'marked';
 import { gfmHeadingId } from 'marked-gfm-heading-id';
 import { processIcons } from './icons.js';
+import { processMermaid } from './mermaid.js';
+import { processQrCodes } from './qr.js';
 import type { ParsedDocument, Frontmatter } from './types.js';
 
 // Configure marked with GitHub Flavored Markdown extensions
@@ -23,6 +25,12 @@ export function parseMarkdown(content: string): ParsedDocument {
   
   // Process icons :icon-name:
   html = processIcons(html);
+  
+  // Process Mermaid diagrams
+  html = processMermaid(html);
+  
+  // Process QR codes for URLs
+  html = processQrCodes(html);
   
   // Extract title from frontmatter or first h1
   let title = (data as Frontmatter).title || '';

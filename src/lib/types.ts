@@ -6,6 +6,13 @@ export interface Frontmatter {
   author?: string;
   date?: string;
   description?: string;
+  // New features
+  toc?: boolean;
+  header?: string;
+  footer?: string;
+  pageNumbers?: boolean;
+  totalPages?: boolean;
+  logo?: string;
   [key: string]: unknown;
 }
 

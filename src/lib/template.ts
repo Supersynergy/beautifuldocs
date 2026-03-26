@@ -4,6 +4,10 @@ import { getTemplate } from './templates.js';
 import { getPalette, generateCssVariables } from './palettes.js';
 import { getEffectStyles } from './effects.js';
 import { getIconStyles } from './icons.js';
+import { extractToc, generateTocHtml, insertToc } from './toc.js';
+import { generateHeaderFooterCss, generateHeaderFooterHtml } from './header-footer.js';
+import { getMermaidStyles } from './mermaid.js';
+import { getQrStyles } from './qr.js';
 import { getComponentStyles } from './components.js';
 
 export interface TemplateOptions {
@@ -30,6 +34,28 @@ export function generateHtml(
   const effectCss = getEffectStyles();
   const componentCss = getComponentStyles();
   const iconCss = getIconStyles();
+  const headerFooterCss = generateHeaderFooterCss();
+  const mermaidCss = getMermaidStyles();
+  const qrCss = getQrStyles();
+  
+  // Generate TOC if requested
+  let processedHtml = html;
+  if (doc.frontmatter.toc !== false) {
+    const toc = extractToc(html);
+    if (toc.length > 0) {
+      const tocHtml = generateTocHtml(toc);
+      processedHtml = insertToc(html, tocHtml);
+    }
+  }
+  
+  // Generate header/footer HTML
+  const headerFooterOptions = {
+    header: doc.frontmatter.header as string | undefined,
+    footer: doc.frontmatter.footer as string | undefined,
+    pageNumbers: doc.frontmatter.pageNumbers !== false,
+    totalPages: doc.frontmatter.totalPages === true,
+  };
+  const headerFooterHtml = generateHeaderFooterHtml(headerFooterOptions);
   
   // Add Google Fonts link for the template
   const fontLink = getFontLink(templateName);
@@ -48,6 +74,9 @@ export function generateHtml(
     ${effectCss}
     ${componentCss}
     ${iconCss}
+    ${headerFooterCss}
+    ${mermaidCss}
+    ${qrCss}
     
     /* Template-specific CSS variables */
     :root {
@@ -56,8 +85,9 @@ export function generateHtml(
   </style>
 </head>
 <body>
+  ${headerFooterHtml}
   <main class="document template-${templateName}">
-    ${format === '16:9' ? wrapSlides(html) : html}
+    ${format === '16:9' ? wrapSlides(processedHtml) : processedHtml}
   </main>
 </body>
 </html>`;
