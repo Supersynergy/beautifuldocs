@@ -1,34 +1,3 @@
-<!-- REPO-POLISH:START -->
-<p align="center">
-  <img src="docs/assets/social-preview.png" alt="Repo social preview" width="100%">
-</p>
-
-> Beautifuldocs is a TypeScript app/toolkit for practical developer workflows.
-
-## Quick Start
-
-```bash
-git clone https://github.com/Supersynergy/beautifuldocs
-cd beautifuldocs
-bun install
-```
-
-Expected result: the project runs locally or reports the next missing prerequisite directly in the terminal.
-
-## Developer Map
-
-| Need | Command |
-|---|---|
-| dev | `bun run dev` |
-| test | `bun run test` |
-| build | `bun run build` |
-| setup | `bun install` |
-
-Full verification path: `bun run dev && bun run test && bun run build && bun install`
-
-Agent instructions live in [AGENTS.md](AGENTS.md).
-<!-- REPO-POLISH:END -->
-
 # BeautifulDocs
 
 **Beautiful PDFs, slides & documents from Markdown.** CLI-first, AI-powered, stunning design.
