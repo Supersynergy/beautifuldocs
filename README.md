@@ -18,7 +18,7 @@ beautifuldocs generate "AI Trends 2026" --format slides --template neon
 beautifuldocs watch document.md
 ```
 
-## ✨ Features
+## Features
 
 - 🎨 **4 Stunning Templates**: Editorial, Dark Executive, Clean Minimal, Neon Gradient
 - 📑 **Auto Table of Contents**: Generated from headings with page numbers
@@ -34,7 +34,7 @@ beautifuldocs watch document.md
 - ⚡ **Live Preview**: Watch mode with auto-reload
 - 📦 **Batch Processing**: Convert multiple files at once
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # Initialize project
@@ -48,7 +48,7 @@ beautifuldocs build document.md
 beautifuldocs generate "Quarterly Report Q1 2026" --format slides
 ```
 
-## 📝 Markdown Frontmatter
+## Markdown Frontmatter
 
 ```yaml
 ---
@@ -66,7 +66,7 @@ totalPages: true       # Show "Page X of Y"
 ---
 ```
 
-## 🎨 Templates
+## Templates
 
 | Template | Style | Best For |
 |----------|-------|----------|
@@ -75,7 +75,7 @@ totalPages: true       # Show "Page X of Y"
 | **Minimal** | Swiss design | Proposals, clean documents |
 | **Neon** | Purple/cyan glows | Modern SaaS, presentations |
 
-## 💻 Commands
+## Commands
 
 | Command | Description |
 |---------|-------------|
@@ -85,7 +85,7 @@ totalPages: true       # Show "Page X of Y"
 | `batch <pattern>` | Process multiple files |
 | `init [dir]` | Scaffold new project |
 
-## 📊 Mermaid Diagrams
+## Mermaid Diagrams
 
 ```markdown
 ```mermaid
@@ -98,7 +98,7 @@ graph TD
 
 Supported: flowchart, sequence, class, state, ER, Gantt, pie, mindmap
 
-## 🧩 Components
+## Components
 
 ```markdown
 <!-- Cards -->
@@ -128,7 +128,7 @@ Supported: flowchart, sequence, class, state, ER, Gantt, pie, mindmap
 </div>
 ```
 
-## 🔐 Environment Variables
+## Environment Variables
 
 ```bash
 # For AI features (optional)
@@ -136,7 +136,7 @@ export OPENROUTER_API_KEY="sk-or-..."
 export FAL_API_KEY="..."
 ```
 
-## 📦 Installation
+## Installation
 
 ```bash
 # Via Bun (recommended)
@@ -146,7 +146,7 @@ bun add -g beautifuldocs
 npm install -g beautifuldocs
 ```
 
-## 🎯 Examples
+## Examples
 
 ### Professional Report with TOC
 ```markdown
@@ -199,7 +199,7 @@ POST /api/auth
 ```
 ```
 
-## 📄 License
+## License
 
 MIT © SuperSynergy
 
