@@ -1,5 +1,9 @@
 # BeautifulDocs
 
+![BeautifulDocs](assets/cover.png)
+
+**🧭 Explore:** [Quick start](#quick-start) · [Features](#features) · [Templates](#templates) · [Commands](#commands) · [Examples](#examples)
+
 **Beautiful PDFs, slides & documents from Markdown.** CLI-first, AI-powered, stunning design.
 
 The local, open-source alternative to Gamma.app, Beautiful.ai, and Canva Slides.
