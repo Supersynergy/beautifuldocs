@@ -72,22 +72,50 @@ totalPages: true       # Show "Page X of Y"
 
 ## Templates
 
-| Template | Style | Best For |
-|----------|-------|----------|
-| **Editorial** | Serif + warm tones | Articles, reports, whitepapers |
-| **Dark** | Dark bg + gradients | Pitch decks, tech docs |
-| **Minimal** | Swiss design | Proposals, clean documents |
-| **Neon** | Purple/cyan glows | Modern SaaS, presentations |
+<details>
+<summary><strong>📋 Show 4 entries</strong></summary>
+
+- **Editorial**<br>
+  Style: Serif + warm tones<br>
+  Best For: Articles, reports, whitepapers
+
+- **Dark**<br>
+  Style: Dark bg + gradients<br>
+  Best For: Pitch decks, tech docs
+
+- **Minimal**<br>
+  Style: Swiss design<br>
+  Best For: Proposals, clean documents
+
+- **Neon**<br>
+  Style: Purple/cyan glows<br>
+  Best For: Modern SaaS, presentations
+
+</details>
+
 
 ## Commands
 
-| Command | Description |
-|---------|-------------|
-| `build <file>` | Convert markdown to PDF |
-| `generate <topic>` | AI-generate content and PDF |
-| `watch <file>` | Live preview with auto-reload |
-| `batch <pattern>` | Process multiple files |
-| `init [dir]` | Scaffold new project |
+<details>
+<summary><strong>📋 Show 5 entries</strong></summary>
+
+- **`build <file>`**<br>
+  Description: Convert markdown to PDF
+
+- **`generate <topic>`**<br>
+  Description: AI-generate content and PDF
+
+- **`watch <file>`**<br>
+  Description: Live preview with auto-reload
+
+- **`batch <pattern>`**<br>
+  Description: Process multiple files
+
+- **`init [dir]`**<br>
+  Description: Scaffold new project
+
+</details>
+
 
 ## Mermaid Diagrams
 
