@@ -1,6 +1,9 @@
+<p align="center">
+  <img src="assets/cover.png" alt="BeautifulDocs" width="960">
+</p>
+
 # BeautifulDocs
 
-![BeautifulDocs](assets/cover.png)
 
 **🧭 Explore:** [Quick start](#quick-start) · [Features](#features) · [Templates](#templates) · [Commands](#commands) · [Examples](#examples)
 
