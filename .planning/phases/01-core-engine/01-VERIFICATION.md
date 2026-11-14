@@ -26,7 +26,7 @@
 ### Test Results
 
 ```
-✅ bun run src/cli.ts build test.md --output output/test.pdf
+✅ bun run src/cli.ts build test/fixtures/test.md --output output/test.pdf
    → PDF generated successfully (90KB)
 ```
 

@@ -239,3 +239,7 @@ POST /api/auth
 MIT © SuperSynergy
 
 [GitHub](https://github.com/Supersynergy/beautifuldocs)
+
+## Additional documentation
+
+[docs/reports](docs/reports/) · [test/fixtures](test/fixtures/)

@@ -1,7 +1,7 @@
 import { parseMarkdown } from './src/lib/parser.js';
 import { readFileSync } from 'fs';
 
-const content = readFileSync('./test.md', 'utf-8');
+const content = readFileSync('test/fixtures/test.md', 'utf-8');
 const result = parseMarkdown(content);
 
 console.log('=== Frontmatter ===');

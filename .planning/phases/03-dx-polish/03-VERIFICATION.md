@@ -32,7 +32,7 @@
 ## Files Created
 
 - `src/lib/watcher.ts` - Watch mode implementation
-- `test-slides.md` - 16:9 slide demo
+- `test/fixtures/test-slides.md` - 16:9 slide demo
 
 ## Status: PASSED
 

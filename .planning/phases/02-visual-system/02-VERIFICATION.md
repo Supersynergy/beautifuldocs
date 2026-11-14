@@ -17,7 +17,7 @@
 
 | Feature | Status | Evidence |
 |---------|--------|----------|
-| 40+ built-in icons | ✅ PASS | test-full.md renders :home:, :user:, etc. |
+| 40+ built-in icons | ✅ PASS | test/fixtures/test-full.md renders :home:, :user:, etc. |
 | Size modifiers (sm/lg) | ✅ PASS | :heart-sm:, :heart-lg: work |
 | SVG inline embedding | ✅ PASS | No external requests needed |
 
@@ -57,7 +57,7 @@
 - `src/lib/effects.ts` - 50+ gradient/effect classes
 - `src/lib/components.ts` - Card, tag, metric, progress, callout components
 - `src/lib/icons.ts` - 40+ Lucide icons
-- `test-full.md` - Comprehensive feature test
+- `test/fixtures/test-full.md` - Comprehensive feature test
 
 ## Test Results
 
